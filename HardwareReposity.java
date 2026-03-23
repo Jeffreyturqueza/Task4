@@ -19,7 +19,15 @@ public class HardwareRepository {
             try (Connection conn = DriverManager.getConnection(DB_URL);
                  Statement stmt = conn.createStatement();
                  ResultSet rs = stmt.executeQuery("SELECT * FROM " + table)) {
+                
+                while (rs.next()) {
+                    int id = rs.getInt("ID");
+                    String brand = rs.getString("Brand");
+                    int spec = rs.getInt("Spec");
+                    String type = rs.getString("Type");
 
+                    
+                }
 
 
             } catch (SQLException e) {}
